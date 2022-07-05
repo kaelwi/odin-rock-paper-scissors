@@ -7,16 +7,16 @@ html, body {
     height: 100%;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
@@ -30,7 +30,6 @@ body {
     flex-direction: column;
     width: 125px;
     align-items: center;
-    
 }
 
 .card-img {
@@ -39,36 +38,30 @@ body {
     border-color: rgb(102, 4, 110);
     border-style: solid;
     padding: 5px;
+}
 
+.header, .footer, .board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
     background: linear-gradient(0deg, white, rgb(218, 144, 224));
     height: 25%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .footer {
     background: linear-gradient(0deg, rgb(102, 4, 110), white);
     height: 25%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding-bottom: 20px;
 }
 
 .board {
     height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .mouseOver {
