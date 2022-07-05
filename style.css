@@ -40,20 +40,20 @@ img {
     padding: 5px;
 }
 
-.header, .footer, .board {
+header, footer, .board {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.header {
+header {
     background: linear-gradient(0deg, white, rgb(218, 144, 224));
     height: 25%;
     width: 100%;
 }
 
-.footer {
+footer {
     background: linear-gradient(0deg, rgb(102, 4, 110), white);
     height: 25%;
     width: 100%;
@@ -104,4 +104,8 @@ button {
 .invisible {
     background: transparent;
     border: none;
+}
+
+footer h2 {
+    padding-top: 30px;
 }
