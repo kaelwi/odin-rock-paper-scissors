@@ -1,6 +1,9 @@
 let playerWins = 0;
 let computerWins = 0;
 
+let computerSelection;
+let playerSelection;
+
 function computerPlay() {
     const response = ['PAPER', 'ROCK', 'SCISSORS'];
     return response[Math.floor(Math.random()*response.length)];
@@ -10,7 +13,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toUpperCase();
 
     if (playerSelection == computerSelection) {
-        return 'nerozhodne';
+        return 'tie';
     } else {
         if (playerSelection == 'PAPER') {
             if (computerSelection == 'ROCK') {
@@ -35,8 +38,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function play() {
-    let computerSelection = computerPlay();
-    let playerSelection = prompt("Tell me your next move");
+    computerSelection = computerPlay();
 
     let round = playRound(playerSelection, computerSelection);
     if (round.includes('wins')) {
@@ -45,9 +47,11 @@ function play() {
         computerWins++;
     }
     console.log(round);
+    score();
 }
 
 function game() {
+    /*
     for (let i = 0; i < 5; i++) {
         play();
     }
@@ -55,6 +59,7 @@ function game() {
     while (playerWins == computerWins) {
         play();
     }
+    */
 
     if (playerWins > computerWins) {
         console.log('You beat the computer!');
@@ -63,5 +68,33 @@ function game() {
     }
 }
 
-game();
+const div = document.querySelector('#score');
+
+function score() {
+    div.textContent = `Human ${playerWins} vs Computer ${computerWins}`;
+
+    if (playerWins >= 5 || computerWins >= 5) {
+        const winner = document.createElement('div');
+        
+        if (playerWins > computerWins) {
+            winner.textContent = 'You beat the computer!';
+        } else {
+            winner.textContent = 'Looser...';
+        }
+
+        div.appendChild(winner);
+    }
+    
+
+}
+
+// game();
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.textContent;
+        play();
+    });
+});
 
