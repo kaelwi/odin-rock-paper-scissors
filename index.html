@@ -8,11 +8,57 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <button id="rock-btn">ROCK</button>
-    <button id="paper-btn">PAPER</button>
-    <button id="scissors-btn">SCISSORS</button>
+    <div class="header">
+        <h1>ROCK-PAPER-SCISSORS</h1>
 
-    <div id="score"></div>
+
+
+    </div>
+
+    <div class="board">
+
+        <div class="container">
+            <div class="card" id="rock">
+                <div class="card-img">
+                    <img src="./res/stone.png" alt="rock" />
+                </div>
+                <p>ROCK</p>
+            </div>
+            <div class="card" id="paper">
+                <div class="card-img">
+                    <img src="./res/mail.png" alt="paper" />
+                </div>
+                <p>PAPER</p>
+            </div>
+            <div class="card" id="scissors">
+                <div class="card-img">
+                    <img src="./res/cut.png" alt="scissors" />
+                </div>
+                <p>SCISSORS</p>
+            </div>
+        </div>
+
+        <div id="response-container">
+            <div id="computerMove">
+                <p>Computer plays: </p>
+                <p id="move">&nbsp;</p>
+            </div>
+            <p id="response">&nbsp;</p>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <h2>SCORE</h2>
+        <p id="score">&nbsp;</p>
+        <p id="result">&nbsp;</p>
+
+        <button class="invisible">New Game</button>
+
+
+    </div>
+    
     
     <script src="./script.js"></script>
 </body>
